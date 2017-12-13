@@ -1,0 +1,8 @@
+
+<div class="container">
+    <div class="row">
+        <app-photo *ngFor="let foto of fotos; let i = index" [fotoindex]="i" [foto]=foto.path [legenda]="foto.legenda" (openModalEvent)="openModal($event);" ></app-photo>
+    </div>
+</div>
+
+<app-modal [fotos]="fotos" [fotoindex]="fotoindex" [modalAberto]="modalStatus"></app-modal>

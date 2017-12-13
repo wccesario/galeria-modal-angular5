@@ -1,0 +1,13 @@
+<div class="modal" id="myModal" [style.display]="modalAberto.status">
+    <span class="close cursor" (click)="closeModal()">&times;</span>
+    <div class="modal-content">
+      <img [src]="fotos[fotoindex].path" class="imagemModal">
+      <span class="img-caption">{{legenda}}</span>
+  
+      <a class="prev" *ngIf="fotoindex > 0" (click)="decrementa()">&#10094;</a>
+      <a class="next" *ngIf="fotoindex < fotos.length -1" (click)="incrementa()">&#10095;</a>
+      
+        
+    </div>
+
+  </div>
