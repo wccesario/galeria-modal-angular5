@@ -20,8 +20,18 @@ export class ModalComponent implements OnInit {
     this.modalAberto.status = "none";
   }
 
+  nextImage() {
+    if(this.fotoindex < this.fotos.length - 1)
+      this.fotoindex++;
+  }
+
+  prevImage(){
+    if(this.fotoindex > 0)
+      this.fotoindex--;
+  }
+
   @HostListener('window:keydown', ['$event'])
-  ketListeners(event: KeyboardEvent) {
+  keyListeners(event: KeyboardEvent) {
 
     event.preventDefault();
     event.stopPropagation();
@@ -31,22 +41,11 @@ export class ModalComponent implements OnInit {
     }
 
     if(event.keyCode == 39){
-      this.incrementa();
+      this.nextImage();
     }
 
     if(event.keyCode == 37){
-      this.decrementa();
+      this.prevImage();
     }
   }
-
-  incrementa() {
-    if(this.fotoindex < this.fotos.length - 1)
-      this.fotoindex++;
-  }
-
-  decrementa(){
-    if(this.fotoindex > 0)
-      this.fotoindex--;
-  }
-
 }

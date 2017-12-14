@@ -11,17 +11,14 @@ export class PhotoComponent implements OnInit {
   @Input() legenda: String;
   @Input() fotoindex: number;
   @Output() openModalEvent: EventEmitter<any> = new EventEmitter<any>();
-
   keyCode: number;
   modalAberto: any;
 
   constructor() { }
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
   openModal(){
-    /* this.modalAberto = "block"; */
     this.openModalEvent.emit(this.fotoindex);
   }
 
@@ -29,16 +26,4 @@ export class PhotoComponent implements OnInit {
     this.modalAberto.status = "none";
   }
 
-  @HostListener('window:keydown', ['$event'])
-  closeModalEsc(event: KeyboardEvent) {
-
-    event.preventDefault();
-    event.stopPropagation();
-
-    this.keyCode = event.keyCode
-    
-    if(this.keyCode == 27)
-      this.closeModal();
-  
-    }
 }

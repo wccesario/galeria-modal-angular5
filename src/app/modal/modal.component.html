@@ -4,10 +4,9 @@
       <img [src]="fotos[fotoindex].path" class="imagemModal">
       <span class="img-caption">{{legenda}}</span>
   
-      <a class="prev" *ngIf="fotoindex > 0" (click)="decrementa()">&#10094;</a>
-      <a class="next" *ngIf="fotoindex < fotos.length -1" (click)="incrementa()">&#10095;</a>
+      <a class="prev" *ngIf="fotoindex > 0" (click)="prevImage()">&#10094;</a>
+      <a class="next" *ngIf="fotoindex < fotos.length -1" (click)="nextImage()">&#10095;</a>
       
-        
     </div>
 
   </div>

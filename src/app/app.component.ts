@@ -16,9 +16,7 @@ import 'rxjs/add/operator/delay';
 export class AppComponent {
 
   fotos:any[]; 
-
-  fotoindex:number = 0 ;
-
+  fotoindex:number = 0;
   modalStatus: any = {'status': 'none'};
 
   ngOnInit(): void{
